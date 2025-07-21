@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="card">
+          <h1 class="heading">TIP CALCULATOR</h1>
+            <p>Enter the bill and tip amount:</p>
+            <label for="bill">Bill Amount:</label> 
+            <input type="number" name="bill" id="bill" ><br>
+            <label for="tip">Tip Percentage:</label>
+            <input type="number" name="per" id="per"><br>
+            <input type="button" value="CALCULATE" onclick="document.getElementById('total').innerHTML=calTip()"><br>
+         <h3>TOTAL: $ <span id="total"></span> </h3> 
+
+    
+        </div>
+    </main>
+    
+</body>
+
+</html>
+
+
+    <script>
+
+        function calTip(){
+         bill = document.getElementById("bill").value;
+         per = document.getElementById("per").value;
+        
+        tip =per/100*bill;
+         total = parseFloat(bill) + parseFloat(tip);
+            if (isNaN(total)) {
+                total = 0;
+            }
+   return total;
+        }
+    </script>
